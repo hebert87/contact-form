@@ -77,6 +77,15 @@ button:hover {
     opacity: 0.9;
 }
 
+/* Error messages */
+.err {
+    color: red;          
+    font-size: 0.9rem;   
+    display: none;       /* hidden until JS shows it */
+    margin-top: 0.25rem; 
+    font-weight: 600;    
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .grid {

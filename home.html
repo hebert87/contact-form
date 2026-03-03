@@ -16,16 +16,24 @@
     <main class="container">
         <h1>Contact Form</h1>
 
-        <form>
+        <form id="contact-form" action="#" method="post">
             <div class="grid">
 
                 <div>
-                <label for="first-name">First Name</label>
+                <label for="first-name">First Name
+                    <span class="err" id="errFname" style="display:none;">
+                        First name is required
+                    </span>
+                </label>
                 <input id="first-name" name="first-name" type="text">
                 </div>
 
                 <div>
-                <label for="last-name">Last Name</label>
+                <label for="last-name">Last Name
+                    <span class="err" id="errLname" style="display:none;">
+                        Last name is required
+                    </span>
+                </label>
                 <input id="last-name" name="last-name" type="text">
                 </div>
 
@@ -40,17 +48,29 @@
                 </div>
 
                 <div>
-                <label for="linkedin">LinkedIn URL</label>
+                <label for="linkedin">LinkedIn URL
+                    <span class="err" id="errLinkedin" style="display:none;">
+                        LinkedIn URL must start with https://linkedin.com/in/
+                    </span>
+                </label>
                 <input id="linkedin" name="linkedin" type="url">
                 </div>
 
                 <div>
-                <label for="email">Email Address</label>
+                <label for="email">Email Address
+                    <span class="err" id="errEmail" style="display:none;">
+                        Please enter a valid email address.
+                    </span>
+                </label>
                 <input id="email" name="email" type="email">
                 </div>
 
                 <div>
-                <label for="meeting">How did we meet?</label>
+                <label for="meeting">How did we meet?
+                    <span class="err" id="errMeeting" style="display:none;">
+                        Please select how we met
+                    </span>
+                </label>
                 <select id="meeting" name="meeting">
                     <option>Please select</option>
                     <option>School</option>
@@ -88,6 +108,6 @@
         <button type="submit">Submit</button>
         </form>
     </main>
-
+<script src="/js/contact.js"></script>
 </body>
 </html>
