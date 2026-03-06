@@ -7,6 +7,12 @@ import express from 'express';
 
 const app = express();
 
+// creating a memory for contacts
+const contacts = [];
+
+//middleware to parse data
+app.use(express.urlencoded({ extended: true }));
+
 
 // Define the port number where our server will listen
 
@@ -17,11 +23,25 @@ app.use(express.static('public'));
 
 // Define a default "route" ('/')
 
-
 app.get('/', (req, res) => {
     res.sendFile('home.html', { root: '.' });
 });
 
+// 
+app.post('/submit-contact', (req, res) => {
+    const contact = req.body;
+    contacts.push(contact);
+    res.redirect('/confirmation');
+});
+
+// confirmation root
+app.get('/confirmation', (req, res) => {
+res.sendFile('confirmation.html', { root: '.' });
+});
+
+app.get('/admin', (req, res) => {
+    res.json(contacts);
+});
 
 // Start the server and listen on the specified port
 
