@@ -26,6 +26,14 @@ const pool = mysql2.createPool({
     database: process.env.DB_NAME,
     port: process.env.DB_PORT
 }).promise();
+(async () => {
+  try {
+    const [rows] = await pool.query("SELECT 1+1 AS test");
+    console.log(rows); // should print [{ test: 2 }]
+  } catch(err) {
+    console.error(err);
+  }
+})();
 
 // Define server port
 const PORT = 3000;
