@@ -92,3 +92,91 @@ button:hover {
         grid-template-columns: 1fr;
     }
 }
+
+:root {
+    --text-main: #111827;
+    --text-muted: #6b7280;
+    --border-light: #e5e7eb;
+    --link: #2563eb;
+    --bg-page: #ffffff;
+}
+
+*{
+    line-height: 1.7; 
+    
+}
+
+body{
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    color: var(--text-main);
+    background-color: var(--bg-page);
+}
+/*header*/
+#header{
+    display: flex;
+    gap: 2rem;
+    border-bottom: 2px solid var(--border-light);
+
+
+}
+#profile-pic{
+    width: 150px;
+    height: auto;
+    border-radius: 30px;
+    margin-bottom: 1rem;
+
+}
+/* links */
+a { color: var(--link);
+    text-decoration: none;
+}
+a:hover,
+a:focus {
+    text-decoration: underline;
+}
+
+
+h2{
+    border-bottom: 2px solid var(--border-light);
+    margin-bottom: 1.5rem;
+
+}
+/*center page*/
+header,
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.date {
+    float: right;
+    font-weight: 400;
+    color: var(--text-muted);
+}
+#skills strong {
+    display: inline-block;
+    width: 160px;
+}
+@media (max-width: 768px) {
+    #header {
+    flex-direction: column;
+    align-items: flex-start;
+    }
+
+    nav {
+    margin-top: 0.5rem;
+    }
+
+    #experience p,
+    #other-experience p {
+    flex-direction: column;
+    gap: 0.25rem;
+    }
+
+    .date {
+    margin-left: 0;
+    }
+}
+
+

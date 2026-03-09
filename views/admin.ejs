@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thank You</title>
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+    <%- include('partials/navbar') %>
+
+    <main class="container">
+        <h1>Thank You for Your Submission!</h1>
+        <% contacts.forEach(contact => { %>
+
+<p>Name: <%= contact.name %> <%= contact.lastName %></p>
+<p>Email: <%= contact.email %></p>
+<p>Job Title: <%= contact.jobTitle %></p>
+<p>Company: <%= contact.company %></p>
+<p>Message: <%= contact.message %></p>
+<p>Submitted at: <%= contact.timestamp %></p>
+
+<hr>
+
+<% }) %>
+    </main>
+</body>
+</html>
